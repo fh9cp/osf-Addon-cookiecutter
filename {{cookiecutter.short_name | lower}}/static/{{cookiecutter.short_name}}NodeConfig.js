@@ -7,6 +7,7 @@
         define(['knockout', 'jquery', 'osfutils', 'knockoutpunches'], factory);
     } else {
         global.{{cookiecutter.short_name | capitalize}}NodeConfig  = factory(ko, jQuery);
+        $script.done('{{cookiecutter.short_name}}NodeConfig');
     }
 }(this, function(ko, $) {
     // Enable knockout punches
@@ -47,4 +48,5 @@
         $.osf.applyBindings(self.viewModel, selector);
     }
 
+    return {{cookiecutter.short_name | capitalize}}NodeConfig;
 }));
